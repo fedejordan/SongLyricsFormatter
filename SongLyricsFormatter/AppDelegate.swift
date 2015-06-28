@@ -12,10 +12,16 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-
+    var lyricsViewController: LyricsViewController!
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        
+        lyricsViewController = LyricsViewController(nibName: "LyricsViewController", bundle: nil)
+        
+        window.contentView.addSubview(lyricsViewController.view)
+        lyricsViewController.view.frame = (window.contentView as! NSView).bounds
+        
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
