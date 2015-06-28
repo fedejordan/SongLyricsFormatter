@@ -7,9 +7,11 @@
 //
 
 import Cocoa
+import AVFoundation
 
 class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     
+    @IBOutlet weak var openSongButton: NSButton!
     @IBOutlet var lyricsTextView: NSTextView!
     @IBOutlet var secondsTextField: NSTextField!
     @IBOutlet var phraseLimitButton: NSButton!
@@ -23,11 +25,30 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
     var actualIndex = -1
     var counting = false
     var songId = ""
+    var songPath: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
+    
+    @IBAction func didSelectOpenSong(sender: AnyObject) {
+        var openPanel = NSOpenPanel()
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseDirectories = false
+        openPanel.canCreateDirectories = false
+        openPanel.canChooseFiles = true
+        openPanel.allowedFileTypes = ["mp3"]
+        openPanel.beginWithCompletionHandler { (result) -> Void in
+            if result == NSFileHandlingPanelOKButton {
+                if let path = openPanel.URL?.path {
+                    self.songPath = path
+                    self.startButton.enabled = true
+                }
+            }
+        }
+    }
+    
     
     @IBAction func didSelectAnalyzeLyrics(sender: AnyObject){
         if(songIdTextField.stringValue=="" || (lyricsTextView.textStorage as NSAttributedString!).string == ""){
@@ -36,6 +57,8 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
         else{
             if(counting==false){
                 startCounter()
+                playSong()
+                self.openSongButton.enabled = false
                 startButton.title = "Stop"
                 songId = songIdTextField.stringValue
                 songIdTextField.enabled = false
@@ -67,6 +90,20 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
         phrasesTableView.reloadData()
     }
     
+    
+    func playSong(){
+        println("path: " + self.songPath!)
+        var error: NSError?
+        var audioPlayer = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: songPath!), error: &error)
+        if audioPlayer == nil {
+            if let e = error {
+                println(e.localizedDescription)
+            }
+        }
+        audioPlayer.prepareToPlay()
+        audioPlayer.volume = 1.0
+        audioPlayer.play()
+    }
     
     func startCounter(){
         analyzePhrases()

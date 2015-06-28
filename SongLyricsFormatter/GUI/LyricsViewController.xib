@@ -7,6 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="LyricsViewController" customModule="SongLyricsFormatter" customModuleProvider="target">
             <connections>
                 <outlet property="lyricsTextView" destination="Mgj-1E-q5b" id="9ak-kl-oKX"/>
+                <outlet property="openSongButton" destination="v6L-R2-m0H" id="5RX-l5-Zsb"/>
                 <outlet property="phraseLimitButton" destination="1mL-ci-8Te" id="0dF-om-cl5"/>
                 <outlet property="phrasesTableView" destination="qyk-hm-Rlx" id="j9c-Wc-CZ1"/>
                 <outlet property="secondsTextField" destination="tnI-UG-kqr" id="Q3Y-Vx-eVe"/>
@@ -18,11 +19,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="498" height="418"/>
+            <rect key="frame" x="0.0" y="0.0" width="498" height="438"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRX-UN-c6D">
-                    <rect key="frame" x="0.0" y="0.0" width="251" height="418"/>
+                    <rect key="frame" x="0.0" y="0.0" width="251" height="302"/>
                     <clipView key="contentView" id="5VT-nb-Ds0">
                         <rect key="frame" x="1" y="1" width="223" height="133"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +33,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="249" height="416"/>
+                                <size key="minSize" width="249" height="300"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <attributedString key="textStorage">
                                     <fragment>
@@ -75,7 +76,7 @@ soy un hombre que espera el alma.</mutableString>
                                     </fragment>
                                 </attributedString>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="249" height="416"/>
+                                <size key="minSize" width="249" height="300"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                             </textView>
                         </subviews>
@@ -85,14 +86,14 @@ soy un hombre que espera el alma.</mutableString>
                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Emk-V2-pCp">
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Emk-V2-pCp">
                         <rect key="frame" x="224" y="1" width="15" height="133"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lmc-a3-M0e">
                     <rect key="frame" x="312" y="346" width="132" height="32"/>
-                    <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gm0-Ed-g39">
+                    <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gm0-Ed-g39">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -103,8 +104,8 @@ soy un hombre que espera el alma.</mutableString>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tnI-UG-kqr">
                     <rect key="frame" x="348" y="295" width="60" height="35"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="56" id="Ezb-qt-OSo"/>
-                        <constraint firstAttribute="height" constant="35" id="tSd-xV-S2A"/>
+                        <constraint firstAttribute="width" constant="56" id="5za-ZA-bxc"/>
+                        <constraint firstAttribute="height" constant="35" id="l68-Dw-W5g"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0" id="axn-My-yxt">
                         <font key="font" metaFont="system" size="30"/>
@@ -129,7 +130,7 @@ soy un hombre que espera el alma.</mutableString>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="bRZ-FX-1Xp" viewBased="YES" id="qyk-hm-Rlx">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -191,6 +192,9 @@ soy un hombre que espera el alma.</mutableString>
                 </scrollView>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ae6-Sa-JGZ">
                     <rect key="frame" x="360" y="388" width="96" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="96" id="88R-9O-Tuw"/>
+                    </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="PFI-tc-2RQ">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -200,7 +204,7 @@ soy un hombre que espera el alma.</mutableString>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="08l-L5-ahL">
                     <rect key="frame" x="298" y="391" width="56" height="17"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="52" id="ckf-RT-TuM"/>
+                        <constraint firstAttribute="width" constant="52" id="SCZ-jN-KJr"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="SongId" id="vdb-zW-jFH">
                         <font key="font" metaFont="system"/>
@@ -208,31 +212,45 @@ soy un hombre que espera el alma.</mutableString>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v6L-R2-m0H">
+                    <rect key="frame" x="7" y="361" width="102" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="i3G-bA-yBv"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Open song" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jes-bN-Ajp">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="didSelectOpenSong:" target="-2" id="6cv-Mw-Qwb"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="1mL-ci-8Te" firstAttribute="centerX" secondItem="tnI-UG-kqr" secondAttribute="centerX" id="8tv-S2-TYX"/>
-                <constraint firstItem="vqC-nJ-srP" firstAttribute="leading" secondItem="cRX-UN-c6D" secondAttribute="trailing" constant="7" id="A3Z-fq-w0j"/>
-                <constraint firstItem="vqC-nJ-srP" firstAttribute="top" secondItem="1mL-ci-8Te" secondAttribute="bottom" constant="10" id="EVU-0V-0zT"/>
-                <constraint firstItem="ae6-Sa-JGZ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="8" id="I9V-0c-2fx"/>
-                <constraint firstItem="1mL-ci-8Te" firstAttribute="leading" secondItem="cRX-UN-c6D" secondAttribute="trailing" constant="66" id="JKm-kF-e5R"/>
-                <constraint firstItem="Lmc-a3-M0e" firstAttribute="top" secondItem="ae6-Sa-JGZ" secondAttribute="bottom" constant="14" id="JYf-tC-ThN"/>
-                <constraint firstItem="1mL-ci-8Te" firstAttribute="top" secondItem="tnI-UG-kqr" secondAttribute="bottom" constant="36" id="Sp1-uI-dv0"/>
-                <constraint firstItem="08l-L5-ahL" firstAttribute="leading" secondItem="cRX-UN-c6D" secondAttribute="trailing" constant="49" id="THu-62-W8J"/>
-                <constraint firstItem="cRX-UN-c6D" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="VkS-VM-ELS"/>
-                <constraint firstItem="ae6-Sa-JGZ" firstAttribute="centerY" secondItem="08l-L5-ahL" secondAttribute="centerY" id="XHp-Od-TDT"/>
-                <constraint firstItem="tnI-UG-kqr" firstAttribute="leading" secondItem="cRX-UN-c6D" secondAttribute="trailing" constant="99" id="aNJ-wC-8QB"/>
-                <constraint firstItem="tnI-UG-kqr" firstAttribute="centerX" secondItem="Lmc-a3-M0e" secondAttribute="centerX" id="bGp-cN-XVw"/>
-                <constraint firstAttribute="bottom" secondItem="cRX-UN-c6D" secondAttribute="bottom" id="bZN-Lz-n4v"/>
-                <constraint firstAttribute="trailing" secondItem="ae6-Sa-JGZ" secondAttribute="trailing" constant="42" id="ckb-Xg-Omb"/>
-                <constraint firstItem="Lmc-a3-M0e" firstAttribute="leading" secondItem="cRX-UN-c6D" secondAttribute="trailing" constant="67" id="gsJ-4J-Bbi"/>
-                <constraint firstAttribute="bottom" secondItem="vqC-nJ-srP" secondAttribute="bottom" constant="13" id="hAC-JJ-vhi"/>
-                <constraint firstItem="cRX-UN-c6D" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="mOI-Ru-Ykb"/>
-                <constraint firstItem="ae6-Sa-JGZ" firstAttribute="leading" secondItem="08l-L5-ahL" secondAttribute="trailing" constant="8" symbolic="YES" id="sd5-7z-QZQ"/>
-                <constraint firstItem="vqC-nJ-srP" firstAttribute="centerX" secondItem="1mL-ci-8Te" secondAttribute="centerX" id="wPl-jP-XnM"/>
-                <constraint firstItem="tnI-UG-kqr" firstAttribute="top" secondItem="Lmc-a3-M0e" secondAttribute="bottom" constant="23" id="wpV-fd-NVG"/>
-                <constraint firstAttribute="trailing" secondItem="vqC-nJ-srP" secondAttribute="trailing" id="xAa-Og-bF0"/>
+                <constraint firstItem="vqC-nJ-srP" firstAttribute="leading" secondItem="cRX-UN-c6D" secondAttribute="trailing" constant="7" id="2OO-Nc-Sl6"/>
+                <constraint firstAttribute="trailing" secondItem="vqC-nJ-srP" secondAttribute="trailing" id="42k-Hy-c9Y"/>
+                <constraint firstAttribute="bottom" secondItem="cRX-UN-c6D" secondAttribute="bottom" id="5d5-dH-jZJ"/>
+                <constraint firstAttribute="trailing" secondItem="Lmc-a3-M0e" secondAttribute="trailing" constant="60" id="Bz8-lV-INY"/>
+                <constraint firstItem="v6L-R2-m0H" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="49" id="HJJ-R1-Ro8"/>
+                <constraint firstAttribute="trailing" secondItem="ae6-Sa-JGZ" secondAttribute="trailing" constant="42" id="KJP-GO-nTF"/>
+                <constraint firstItem="tnI-UG-kqr" firstAttribute="top" secondItem="Lmc-a3-M0e" secondAttribute="bottom" constant="23" id="KlV-kN-V1z"/>
+                <constraint firstItem="v6L-R2-m0H" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="13" id="LPl-5q-cAC"/>
+                <constraint firstItem="cRX-UN-c6D" firstAttribute="top" secondItem="v6L-R2-m0H" secondAttribute="bottom" constant="66" id="MTF-bS-M5x"/>
+                <constraint firstItem="Lmc-a3-M0e" firstAttribute="centerX" secondItem="tnI-UG-kqr" secondAttribute="centerX" id="SgN-4g-NmI"/>
+                <constraint firstAttribute="bottom" secondItem="vqC-nJ-srP" secondAttribute="bottom" constant="13" id="TbM-HQ-pmE"/>
+                <constraint firstItem="1mL-ci-8Te" firstAttribute="centerX" secondItem="tnI-UG-kqr" secondAttribute="centerX" id="aTR-Ik-ghr"/>
+                <constraint firstItem="cRX-UN-c6D" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="cIb-Jg-X7k"/>
+                <constraint firstItem="ae6-Sa-JGZ" firstAttribute="centerY" secondItem="08l-L5-ahL" secondAttribute="centerY" id="kJy-nV-efu"/>
+                <constraint firstItem="1mL-ci-8Te" firstAttribute="centerX" secondItem="vqC-nJ-srP" secondAttribute="centerX" id="kPT-zR-oeQ"/>
+                <constraint firstItem="1mL-ci-8Te" firstAttribute="top" secondItem="tnI-UG-kqr" secondAttribute="bottom" constant="36" id="p2j-Mp-o0e"/>
+                <constraint firstItem="vqC-nJ-srP" firstAttribute="top" secondItem="1mL-ci-8Te" secondAttribute="bottom" constant="10" id="pbO-Zp-LSV"/>
+                <constraint firstItem="ae6-Sa-JGZ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="28" id="pbi-IG-fXE"/>
+                <constraint firstItem="tnI-UG-kqr" firstAttribute="leading" secondItem="cRX-UN-c6D" secondAttribute="trailing" constant="99" id="q2h-ia-KPH"/>
+                <constraint firstItem="Lmc-a3-M0e" firstAttribute="top" secondItem="ae6-Sa-JGZ" secondAttribute="bottom" constant="14" id="rWw-0T-GQh"/>
+                <constraint firstItem="ae6-Sa-JGZ" firstAttribute="leading" secondItem="08l-L5-ahL" secondAttribute="trailing" constant="8" symbolic="YES" id="uQq-5Q-13K"/>
+                <constraint firstItem="1mL-ci-8Te" firstAttribute="leading" secondItem="cRX-UN-c6D" secondAttribute="trailing" constant="66" id="yDw-OO-uBo"/>
             </constraints>
-            <point key="canvasLocation" x="362" y="413"/>
+            <point key="canvasLocation" x="362" y="403"/>
         </customView>
     </objects>
 </document>
