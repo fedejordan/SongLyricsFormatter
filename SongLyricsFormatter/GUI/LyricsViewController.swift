@@ -167,6 +167,7 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
         }
         sqlQuery = sqlQuery.substringToIndex(advance(sqlQuery.endIndex, -2))
         println(sqlQuery)
+        self.lyricsTextView.string = sqlQuery
     }
     
 }
