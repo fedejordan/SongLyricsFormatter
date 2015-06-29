@@ -14,6 +14,8 @@
 		6D2DDCCD1B37C55F005184AB /* LyricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DDCCB1B37C55F005184AB /* LyricsViewController.swift */; };
 		6D2DDCCE1B37C55F005184AB /* LyricsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DDCCC1B37C55F005184AB /* LyricsViewController.xib */; };
 		6D2DDCD01B3917BB005184AB /* SongPhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DDCCF1B3917BB005184AB /* SongPhrase.swift */; };
+		6DB842F01B3FBE7000EF82E6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB842EF1B3FBE7000EF82E6 /* AVFoundation.framework */; };
+		6DB842F21B4088D300EF82E6 /* divididos - par mil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DB842F11B4088D300EF82E6 /* divididos - par mil.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		6D2DDCCB1B37C55F005184AB /* LyricsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LyricsViewController.swift; path = GUI/LyricsViewController.swift; sourceTree = "<group>"; };
 		6D2DDCCC1B37C55F005184AB /* LyricsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LyricsViewController.xib; path = GUI/LyricsViewController.xib; sourceTree = "<group>"; };
 		6D2DDCCF1B3917BB005184AB /* SongPhrase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongPhrase.swift; sourceTree = "<group>"; };
+		6DB842EF1B3FBE7000EF82E6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6DB842F11B4088D300EF82E6 /* divididos - par mil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "divididos - par mil.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB842F01B3FBE7000EF82E6 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +66,7 @@
 		6D2DDCA21B37C508005184AB = {
 			isa = PBXGroup;
 			children = (
+				6DB842EF1B3FBE7000EF82E6 /* AVFoundation.framework */,
 				6D2DDCAD1B37C508005184AB /* SongLyricsFormatter */,
 				6D2DDCBE1B37C509005184AB /* SongLyricsFormatterTests */,
 				6D2DDCAC1B37C508005184AB /* Products */,
@@ -79,6 +85,7 @@
 		6D2DDCAD1B37C508005184AB /* SongLyricsFormatter */ = {
 			isa = PBXGroup;
 			children = (
+				6DB842F11B4088D300EF82E6 /* divididos - par mil.mp3 */,
 				6D2DDCB01B37C508005184AB /* AppDelegate.swift */,
 				6D2DDCB21B37C508005184AB /* Images.xcassets */,
 				6D2DDCB41B37C508005184AB /* MainMenu.xib */,
@@ -197,6 +204,7 @@
 			files = (
 				6D2DDCB31B37C508005184AB /* Images.xcassets in Resources */,
 				6D2DDCCE1B37C55F005184AB /* LyricsViewController.xib in Resources */,
+				6DB842F21B4088D300EF82E6 /* divididos - par mil.mp3 in Resources */,
 				6D2DDCB61B37C508005184AB /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +416,7 @@
 				6D2DDCC71B37C509005184AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D2DDCC81B37C509005184AB /* Build configuration list for PBXNativeTarget "SongLyricsFormatterTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +425,7 @@
 				6D2DDCCA1B37C509005184AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

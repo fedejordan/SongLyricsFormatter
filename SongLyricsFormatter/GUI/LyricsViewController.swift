@@ -26,6 +26,7 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
     var counting = false
     var songId = ""
     var songPath: String?
+    var songToPlay: NSSound?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
         openPanel.canChooseDirectories = false
         openPanel.canCreateDirectories = false
         openPanel.canChooseFiles = true
-        openPanel.allowedFileTypes = ["mp3"]
+        openPanel.allowedFileTypes = ["mp3", "mid", "midi"]
         openPanel.beginWithCompletionHandler { (result) -> Void in
             if result == NSFileHandlingPanelOKButton {
                 if let path = openPanel.URL?.path {
@@ -65,6 +66,7 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
             }
             else{
                 stopCounter()
+                stopSong()
                 startButton.enabled = false
                 phraseLimitButton.enabled = false
             }
@@ -92,17 +94,12 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     
     func playSong(){
-        println("path: " + self.songPath!)
-        var error: NSError?
-        var audioPlayer = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: songPath!), error: &error)
-        if audioPlayer == nil {
-            if let e = error {
-                println(e.localizedDescription)
-            }
-        }
-        audioPlayer.prepareToPlay()
-        audioPlayer.volume = 1.0
-        audioPlayer.play()
+        self.songToPlay = NSSound(contentsOfFile: self.songPath!, byReference: false)
+        self.songToPlay?.play()
+    }
+    
+    func stopSong(){
+        self.songToPlay?.stop()
     }
     
     func startCounter(){
