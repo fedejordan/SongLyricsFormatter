@@ -25,8 +25,7 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
     var actualIndex = -1
     var counting = false
     var songId = ""
-    var songPath: String?
-    var songToPlay: NSSound?
+    var midiFile: AnyObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +38,11 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
         openPanel.canChooseDirectories = false
         openPanel.canCreateDirectories = false
         openPanel.canChooseFiles = true
-        openPanel.allowedFileTypes = ["mp3", "mid", "midi"]
+        openPanel.allowedFileTypes = ["mid", "midi"]
         openPanel.beginWithCompletionHandler { (result) -> Void in
             if result == NSFileHandlingPanelOKButton {
                 if let path = openPanel.URL?.path {
-                    self.songPath = path
+                    self.midiFile = MIDIFile.fileWithPath(path)
                     self.startButton.enabled = true
                 }
             }
@@ -94,12 +93,11 @@ class LyricsViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     
     func playSong(){
-        self.songToPlay = NSSound(contentsOfFile: self.songPath!, byReference: false)
-        self.songToPlay?.play()
+        (self.midiFile as! MIDIFile).play()
     }
     
     func stopSong(){
-        self.songToPlay?.stop()
+        (self.midiFile as! MIDIFile).stop()
     }
     
     func startCounter(){

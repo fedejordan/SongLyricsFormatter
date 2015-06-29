@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SongLyricsFormatter/GUI/LyricsViewController.swift"
-            timestampString = "457244676.933712"
+            timestampString = "457245568.067706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "didSelectPhraseLimit(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SongLyricsFormatter/GUI/LyricsViewController.swift"
-            timestampString = "457244676.933712"
+            timestampString = "457245568.067706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "didSelectPhraseLimit(_:)"
             landmarkType = "5">
          </BreakpointContent>

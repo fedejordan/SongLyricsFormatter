@@ -15,7 +15,7 @@
 		6D2DDCCE1B37C55F005184AB /* LyricsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DDCCC1B37C55F005184AB /* LyricsViewController.xib */; };
 		6D2DDCD01B3917BB005184AB /* SongPhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DDCCF1B3917BB005184AB /* SongPhrase.swift */; };
 		6DB842F01B3FBE7000EF82E6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB842EF1B3FBE7000EF82E6 /* AVFoundation.framework */; };
-		6DB842F21B4088D300EF82E6 /* divididos - par mil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DB842F11B4088D300EF82E6 /* divididos - par mil.mp3 */; };
+		6DDA60311B41021B00163194 /* MIDIFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA60301B41021B00163194 /* MIDIFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,9 @@
 		6D2DDCCC1B37C55F005184AB /* LyricsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LyricsViewController.xib; path = GUI/LyricsViewController.xib; sourceTree = "<group>"; };
 		6D2DDCCF1B3917BB005184AB /* SongPhrase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongPhrase.swift; sourceTree = "<group>"; };
 		6DB842EF1B3FBE7000EF82E6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		6DB842F11B4088D300EF82E6 /* divididos - par mil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "divididos - par mil.mp3"; sourceTree = "<group>"; };
+		6DDA602E1B41021A00163194 /* SongLyricsFormatter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SongLyricsFormatter-Bridging-Header.h"; sourceTree = "<group>"; };
+		6DDA602F1B41021B00163194 /* MIDIFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDIFile.h; sourceTree = "<group>"; };
+		6DDA60301B41021B00163194 /* MIDIFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDIFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +87,13 @@
 		6D2DDCAD1B37C508005184AB /* SongLyricsFormatter */ = {
 			isa = PBXGroup;
 			children = (
-				6DB842F11B4088D300EF82E6 /* divididos - par mil.mp3 */,
 				6D2DDCB01B37C508005184AB /* AppDelegate.swift */,
 				6D2DDCB21B37C508005184AB /* Images.xcassets */,
 				6D2DDCB41B37C508005184AB /* MainMenu.xib */,
 				6D2DDCCB1B37C55F005184AB /* LyricsViewController.swift */,
 				6D2DDCCF1B3917BB005184AB /* SongPhrase.swift */,
 				6D2DDCCC1B37C55F005184AB /* LyricsViewController.xib */,
+				6DDA602D1B4101E800163194 /* Externals */,
 				6D2DDCAE1B37C508005184AB /* Supporting Files */,
 			);
 			path = SongLyricsFormatter;
@@ -120,6 +122,16 @@
 				6D2DDCC01B37C509005184AB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6DDA602D1B4101E800163194 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				6DDA602F1B41021B00163194 /* MIDIFile.h */,
+				6DDA60301B41021B00163194 /* MIDIFile.m */,
+				6DDA602E1B41021A00163194 /* SongLyricsFormatter-Bridging-Header.h */,
+			);
+			name = Externals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +216,6 @@
 			files = (
 				6D2DDCB31B37C508005184AB /* Images.xcassets in Resources */,
 				6D2DDCCE1B37C55F005184AB /* LyricsViewController.xib in Resources */,
-				6DB842F21B4088D300EF82E6 /* divididos - par mil.mp3 in Resources */,
 				6D2DDCB61B37C508005184AB /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DDA60311B41021B00163194 /* MIDIFile.m in Sources */,
 				6D2DDCD01B3917BB005184AB /* SongPhrase.swift in Sources */,
 				6D2DDCCD1B37C55F005184AB /* LyricsViewController.swift in Sources */,
 				6D2DDCB11B37C508005184AB /* AppDelegate.swift in Sources */,
@@ -343,10 +355,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SongLyricsFormatter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SongLyricsFormatter/SongLyricsFormatter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -354,10 +369,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SongLyricsFormatter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SongLyricsFormatter/SongLyricsFormatter-Bridging-Header.h";
 			};
 			name = Release;
 		};
